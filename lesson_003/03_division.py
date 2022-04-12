@@ -8,6 +8,13 @@
 # Формат вывода:
 #   Целочисленное деление ХХХ на YYY дает ZZZ
 
-a, b = 179, 37
+a, b = 189, 37
 
-# TODO здесь ваш код
+#
+difference = a - b
+division_count = 0
+while difference >= 0:
+    difference -= b
+    division_count += 1
+
+print('Целочисленное деление', a, 'на', b, 'даёт', division_count)
