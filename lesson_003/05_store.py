@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 # Есть словарь кодов товаров
+from pprint import pprint
+from typing import List, Dict
 
 goods = {
     'Лампа': '12345',
@@ -47,6 +49,17 @@ store = {
 #     вывод на консоль количества и стоимости товара на складе
 
 # TODO здесь ваш код
+for furniture_item, item_code in goods.items():
+    total_quantity = 0
+    total_cost = 0
+    item_list = store.get(item_code)
+    for storage in item_list:
+        total_quantity += storage.get('quantity')
+        total_cost += storage.get('price') * storage.get('quantity')
+
+    print(furniture_item, '-', total_quantity, 'шт., стоимость -', total_cost, 'руб.')
+
+
 
 
 
